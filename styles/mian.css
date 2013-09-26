@@ -10,6 +10,8 @@
 	font-style: normal;
 }
 * {	padding: 0px;	margin: 0px;}html, body {	}body {
+	color: #171717;
+	height: 4000px;
 	min-width: 1050px;
 	margin-top: 84px;	font-family: bebas_neueregular, "Open Sans", sans-serif;}h1,h2,h3,h4,h5,h6 {	font-weight: normal;}a {	color: #171717;	text-decoration: none;}.container {	width: 1050px;	margin: 0px auto;
 }
@@ -38,6 +40,7 @@ header {
 	left: 0px; top: 0px;
 	box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 	background-color: #171717;
+	z-index: 999999;
 }
 #brand {
 	float: left;
@@ -101,6 +104,7 @@ header {
 	background-image: url('http://i.imgur.com/rMlajyK.jpg'); /* http://i.imgur.com/aHoV2VG.jpg http://i.imgur.com/6PscWMF.jpg */
 	background-size: cover;
 	background-position: 0px -120px;
+	border-bottom: 5px solid rgb(93, 189, 240);
 }
 
 #hero-box > div > h1 {
@@ -111,6 +115,35 @@ header {
 	text-align: right;
 	font-size: 80px;
 	color: #DDD;
+}
+
+#orientation {
+	margin-top: 45px;
+}
+#orientation > div {
+}
+#orientation > div > div > div > h2 {
+	text-align: center;
+	font-size: 30px;
+}
+#orientation > div > div > div > h2 > i {
+	font-size: 150px;
+	color: #171717;
+	text-shadow: 2px 2px 0px rgba(93, 189, 240, 0.7);
+	padding-right: 5px;
+}
+#orientation > div > div > div > div {
+	box-sizing: border-box;
+	padding: 0px 30px;
+	display: inline-block;
+	margin-top: 20px;
+}
+#orientation > div > div > div > div > a {
+	color: rgb(93, 189, 240);
+}
+#orientation > div > div > div > div > a:hover {
+	text-decoration: underline;
+	color: rgb(73, 169, 220);
 }
 
 /* footer */
