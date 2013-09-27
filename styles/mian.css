@@ -11,7 +11,6 @@
 }
 * {	padding: 0px;	margin: 0px;}html, body {	}body {
 	color: #171717;
-	height: 4000px;
 	min-width: 1050px;
 	margin-top: 84px;	font-family: bebas_neueregular, "Open Sans", sans-serif;}h1,h2,h3,h4,h5,h6 {	font-weight: normal;}a {	color: #171717;	text-decoration: none;}.container {	width: 1050px;	margin: 0px auto;
 }
@@ -122,28 +121,49 @@ header {
 }
 #orientation > div {
 }
-#orientation > div > div > div > h2 {
+#orientation .span4 > h2 {
 	text-align: center;
 	font-size: 30px;
 }
-#orientation > div > div > div > h2 > i {
-	font-size: 150px;
-	color: #171717;
-	text-shadow: 2px 2px 0px rgba(93, 189, 240, 0.7);
-	padding-right: 5px;
+.orientation-icon {
+	-webkit-border-radius: 50%;
+	   -moz-border-radius: 50%;
+	        border-radius: 50%;
+			
+	
+	width: 150px;
+	height: 150px;
+	margin: 15px auto;
+	background-color: #5DBDF0;
+	text-align: center;
 }
-#orientation > div > div > div > div {
+.orientation-icon span {
+	line-height: 150px;
+	font-size: 120px;
+	color: white;
+}
+#orientation .span4 > p {
 	box-sizing: border-box;
 	padding: 0px 30px;
 	display: inline-block;
 	margin-top: 20px;
+	font-family: "Open Sans";
+	font-size: 14px;
 }
-#orientation > div > div > div > div > a {
+#orientation .span4 > p > a {
 	color: rgb(93, 189, 240);
 }
-#orientation > div > div > div > div > a:hover {
+#orientation .span4 > p > a:hover {
 	text-decoration: underline;
 	color: rgb(73, 169, 220);
+}
+
+#stuff {
+	margin-top: 80px;
+	background-color: #171717;
+	/*background-image: url('../images/office.png');*/
+	height: 300px;
+	width: 100%;
 }
 
 /* footer */
