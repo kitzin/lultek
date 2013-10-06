@@ -26,6 +26,13 @@
 	height: 0;}.row{	width:100%;	position:relative;	clear:both;	margin:0px;	padding:0px;}.row:before, .row:after{	display:table;	content:"";	line-height:0;}.row:after{	clear:both;}.row > *{	margin:0;	padding:0;	box-sizing:border-box;	float:left;}.row .span1{width:8.3333333333%;}.row .span2{width:16.666666667%;}.row .span3{width:25%;}.row .span4{width:33.333333333%;}.row .span5{width:41.666666667%;}.row .span6{width:50%;}.row .span7{width:58.333333333%;}.row .span8{width:66.666666667%;}.row .span9{width:75%;}.row .span10{width:83.33333333%;}.row .span11{width:91.66666667%;}
 .row .span12{width:100%;}
 
+.row .offset1{width:8.3333333333%;}
+.row .offset2{width:16.666666667%;}
+.row .offset3{width:25%;}
+.row .offset4{width:33.333333333%;}
+.row .offset5{width:41.666666667%;}
+.row .offset6{width:50%;}
+
 .color-bar {
 	width: 100%;
 	height: 3px;
@@ -182,18 +189,124 @@ header {
 
 #news {
 	background-color: #F0F0F0;
-	height: 300px;
+	background-size: cover;
+	height: 400px;
 	margin-top: 50px;
+	width: 100%;
+	padding-bottom: 40px;
+}
+#news > div > h2 {
+	font-size: 45px;
+	padding: 20px 0px;
+}
+#news-items {
+	
+}
+#news-items > div {
+	margin: 0px auto;
+	height: 300px;
+}
+
+#news-items .active {
+	width: 100% !important;
+}
+.news-item {
+	width: 96%;
+	height: 96%;
+	margin: 2% auto;
+	border: 1px solid #5DBDF0;
+}
+.news-item:hover {
+	/*
+	transform: scale(1.02,1.02);
+	*/
 }
 
 /* footer */
 footer {
 	/*
 	background-image: url('../images/pixel.png');
-	box-shadow: inset 0px 2px 2px rgba(0,0,0,0.4);
 	*/
 	background-color: #FFF;
-	height: 300px;
+}
+#upper-footer {
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.4) inset;
+	background-image: url('http://i.imgur.com/n3bAR6d.jpg');
+	background-position: 0px -50px;
+	background-size: cover;
+	height: 240px;
+}
+#upper-footer .span4 > h3 {
+	color: #DDD;
+	font-size: 30px;
+	
+	margin-top: 30px;
+	margin-left: 20px;
+}
+#upper-footer .span4 > div {
+	margin-left: 20px;
+	margin-top: 10px;
+}
+
+#upper-footer .contents > div > p > a {
+	font-size: 19px;
+	color: #CCC;
+}
+#upper-footer .contents > div > p > a:hover {
+	/*
+	text-decoration: underline;
+	*/
+	color: #5DBDF0;
+}
+
+#upper-footer .follow > div > a:first-child {
+	/*
+	*/
+	margin-left: 0px;
+}
+#upper-footer .follow > div > a {
+	display: inline-block;
+	margin: 0px 5px;
+}
+#upper-footer .follow > div > a > span {
+	color: #AAA;
+	font-size: 30px;
+}
+#upper-footer .follow > div > a > span:hover {
+	color: #CCC;
+}
+#upper-footer .contact > div > p {
+	color: #CCC;
+	font-size: 17px;
+	padding: 1px 0px;
+}
+#upper-footer .contact > div > p > span {
+	/*
+	text-decoration: underline;
+	border-bottom: 1px dotted #CCC;
+	*/
+}
+
+#bottom-footer {
+	background-color: #202020;
+	height: 60px;
+}
+#bottom-footer p {
+	display: inline-block;
+	margin-top: 14px;
+	color: #DDD;
+	font-size: 20px;
+}
+#bottom-footer p > span {
+	color: #999;
+}
+#bottom-footer  p > .tp {
+	font-size: 13px;
+	color: #DFDFDF;
+	position: relative;
+	top: -3px;
+	text-align: right;
+	display: block;
 }
 /* /footer */
 
