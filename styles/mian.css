@@ -307,9 +307,14 @@ footer {
 	margin-left: 60px;
 	display: inline-block;
 	margin-top: 14px;
+	float: left;
 	
 	color: #DDD;
 	font-size: 20px;
+}
+#bottom-footer .pi {
+	margin-right: 135px;
+	float: right;
 }
 #bottom-footer p > span {
 	color: #999;
