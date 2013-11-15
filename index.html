@@ -4,9 +4,51 @@
 		<meta charset="utf-8" />
 		<title>Lultek</title>
 		
-		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,400italic" />
-		<link rel="stylesheet" href="styles/mian.css" />
+		<link id="main-style" rel="stylesheet" href="styles/main.css" />
+		
+		<script>
+		
+		Object.prototype.addEvent = function(event, cb) {
+			if(window.addEventListener)
+				this.addEventListener(event, cb, false);
+			else
+				this.attachEvent("on" + event, cb);
+		}
+		
+		function edwiseLogin(form) 
+		{
+			var cookies = "https://www.edwise.se/Secure/Default.aspx?idpmethod=saml&Actor=Actor_Client&domain=Lulea",
+				frame = document.createElement("iframe"),
+				hasR = false;
+				
+			form.Submit1.disabled = true;
+			frame.style.display = "none";
+			frame.src = cookies;
+			frame.addEventListener("load", function() 
+			{
+				if(hasR == true)
+				{
+					form.Submit1.disabled = false;
+				}
+				
+				hasR = true;
+			}, false);
+			
+			document.body.appendChild(frame);
+		}
+		
+		
+		window.addEvent("load", function() {
+			
+			var loginForm = document.getElementById("login_form");
+			edwiseLogin(loginForm);
+			
+			
+		});
+		
+		</script>
 	</head>
 	<body>
 		<header>	
@@ -14,14 +56,45 @@
 				<!--<div class="color-bar"></div>-->
 				<div class="container">
 					<div id="brand">
-						<h1><a href="#">Lultek<span>Teknikprogrammet <span>luleå</span></span></a></h1>
+						<h1><a href="#">Lultek<span>Teknikprogrammet<span>luleå</span></span></a></h1>
 					</div>
 					<div id="menu">
 						<ul>
-							<li><a class="active" href="#">Hem</a></li><!--
-							--><li><a href="#">Inriktningar</a></li><!--
-							--><li><a href="#">Om</a></li><!--
-							--><li><a href="http://skola.lultek.se/login">Logga in</a></li>	
+							<li><a href="#">Inriktningar</a></li><!--
+							--><li><a href="about.html">Om</a></li><!--
+							--><li><a href="#">Snabblänkar</a><!--
+								--><div class="dropdown">
+									
+								</div><!--
+							--></li><!--
+							--><li><a href="http://skola.lultek.se/login/">Logga in</a><!--
+								--><div class="dropdown" id="login">
+									<div class="row">
+										<div class="span6">
+											<h2>Inlogging</h2>
+											
+											<form id="login_form" target="_blank" method="post" action="http://skola.lultek.se/session/login">
+												<input type="hidden" name="authmech" value="Novell-password" />
+												<input type="hidden" name="do" value="login" />
+												
+												<label>Användarnamn<br /><input type="text" name="username" /></label>
+												<label>Lösenord<br /><input type="password" name="password" /></label>
+												
+												<label class="inline"><input id="edtek_radio" type="radio" checked name="website" /> edtek</label>
+												<label class="inline"><input id="edwise_radio" type="radio" name="website" /> edwise</label>
+												
+												<br />
+												
+												<input type="submit" name="Submit1" value="Logga in" /> 
+											</form>
+											
+										</div>
+										<div class="span6">
+											<p>Ahhhhhhh hurp a durp Ahhhhhhh hurp a durp Ahhhhhhh hurp a durp Ahhhhhhh hurp a durp Ahhhhhhh hurp a durp Ahhhhhhh hurp a durp Ahhhhhhh hurp a durp Ahhhhhhh hurp a durp Ahhhhhhh hurp a durp Ahhhhhhh hurp a durp Ahhhhhhh hurp a durp Ahhhhhhh hurp a durp </p>
+										</div>
+									</div>
+								</div><!--
+							--></li>
 						</ul>
 					</div>
 					<div class="clearfix"></div>
@@ -30,12 +103,116 @@
 		</header>
 		<div id="hero-box">
 			<div class="container">
-				<h1>Välkommen till Lultek<br />Teknikprogrammets hemsida</h1>
+				<h1>Under konstruktion<br />Ursäkta Nicholas Cage</h1>
 			</div>
 		</div>
-		
+		<div class="container" id="introduction">
+			<div class="row">
+				<div class="span8">
+					<h2 class="heading">Välkommen</h2>
+					<div class="row">
+						<div class="span8">
+							<h2>Om teknikprogrammet</h2>
+							<p>
+								Ut nec felis neque. Phasellus et semper mauris, eu gravida velit. Etiam sit amet velit a sem mattis malesuada. Nulla facilisi. Nam molestie non orci eu malesuada. Etiam eget adipiscing velit, vitae pulvinar felis. Sed mattis, nibh eget faucibus malesuada, urna tellus interdum velit, eget hendrerit purus quam id lacus. Fusce condimentum, nulla a auctor vulputate, arcu massa porta est, viverra eleifend nisl quam sed nibh. Ut posuere eget purus in sagittis. Vestibulum eu placerat felis
+							</p>
+						</div>
+						<div class="span4" id="read-more">
+							<!--<img src="http://placehold.it/400x180/171717/DDD/&amp;text=LULTEK" alt="Placeholder" />-->
+							<h2>Läs mer om våra inriktningar genom att klicka på ikonerna till höger<br/>
+							<div class="rounded-icon medium">
+								<span class="icon-long-arrow-right"></span>
+							</div></h2>
+						</div>
+					</div>
+				</div>
+				<div class="span4">
+					<h2 class="large">Inriktningar</h2>
+					<a href="#">
+						<div class="rounded-icon medium" id="icon-env">
+							<span class="icon-cloud"></span>
+						</div>
+						<h3>Samhällsbyggnad och miljö</h3>
+					</a>
+					
+					<a href="#">
+						<div class="rounded-icon medium" id="icon-it">
+							<span class="icon-laptop"></span>
+						</div>
+						<h3>Informations- och medieteknik</h3>
+					</a>
+					
+					<a href="#">
+						<div class="rounded-icon medium" id="icon-prod">
+							<span class="icon-cogs"></span>
+						</div>
+						<h3>Produktionsteknik</h3>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="school">
+			<div class="container">
+				<div class="row">
+					<div class="span7">
+						<h2>Om Skolan</h2>
+						<p>
+							Ut nec felis neque. Phasellus et semper mauris, eu gravida velit. Etiam sit amet velit a sem mattis malesuada. Nulla facilisi. Nam molestie non orci eu malesuada. Etiam eget adipiscing velit, vitae pulvinar felis. Sed mattis, nibh eget faucibus malesuada, urna tellus interdum velit, eget hendrerit purus quam id lacus. Fusce condimentum, nulla a auctor vulputate, arcu massa porta est, viverra eleifend nisl quam sed nibh. Ut posuere eget purus in sagittis. Vestibulum eu placerat felis
+						</p>
+					</div>
+					<div class="span5">
+						<!--<img src="http://placehold.it/400x180/171717/DDD/&amp;text=LULTEK" alt="Placeholder" />-->
+						<img src="http://www.placecage.com/400/200" alt="Kitten" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="map">
+			<iframe style="width:100%;" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.se/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=65.588611,22.133821&amp;aq=&amp;sll=65.588611,22.133821&amp;sspn=0.006102,0.026157&amp;g=65.588611,22.133821&amp;ie=UTF8&amp;t=m&amp;z=14&amp;iwloc=A&amp;cid=1974169658097271591&amp;ll=65.588611,22.133821&amp;output=embed"></iframe>
+		</div>
 		<footer>
-		
+			<div id="upper-footer">
+				<div class="container">
+					<div class="row">
+						<div class="span4 contents">
+							<h3>Meny</h3>
+							<div>
+								<p><a href="#">Hem</a></p>
+								<p><a href="#">Inriktningar</a></p>
+								<p><a href="#">Om</a></p>
+								<p><a href="#">Logga in</a></p>
+							</div>
+						</div>
+						<div class="span4 follow">
+							<h3>Följ oss på</h3>
+							<div>
+								<a href="http://facebook.com"><span class="derp icon-facebook-sign"></span></a>
+								<a href="http://twitter.com"><span class="icon-twitter-sign"></span></a>								
+							</div>
+						</div>
+						<div class="span4 contact">
+							<h3>Kontakta oss</h3>
+							<div>
+								<p>Kungsfågeln Gymnasiebyn</p>
+								<p>Telefon: <span>123456789</span></p>
+								<p>Email: <span>admin@lultek.se</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="bottom-footer">
+				<div class="container">
+					<div class="row">
+						<div class="span4">
+							<p><span>&#169;2013</span> lultek.se<span class="tp">Teknikprogrammet luleå</span></p>
+						</div>
+						<div class="span8">
+							<p class="pi">Skapad av <a href="pie-studios.com"><img src="http://static.pie-studios.com/assets/img/logo_text.png" alt="&pi;e-studios"/></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</footer>
 	</body>
 </html>
